@@ -22,7 +22,7 @@ const getData = async () => {
   const deleteDataInJson = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/posts/${id}`);
-     
+      getData();
     //   return response.data; 
     } catch (error) {
       console.error(`Error deleting post with ID ${id}:`, error);

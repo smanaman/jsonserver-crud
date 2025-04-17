@@ -1,3 +1,34 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": "5231",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMekuXqi04MTx2Vr-TOHaFrZspTeljnzy09g&s",
+      "title": "aman",
+      "description": "ajjdjsfjadkhksd",
+      "price": "123"
+    }
+  ],
+  "comments": [
+    {
+      "id": "3581",
+      "fullname": "aman",
+      "email": "sanvatsman@gmail.com",
+      "username": "mamsdf",
+      "password": "123"
+    },
+    {
+      "id": "e2f7",
+      "fullname": "amanamamn",
+      "email": "sanvatsman@gmail.com",
+      "username": "mamsdfskkkn",
+      "password": "1233456"
+    },
+    {
+      "id": "b732",
+      "fullname": "aman",
+      "email": "lulu@gmail.com",
+      "username": "user",
+      "password": "123456"
+    }
+  ]
 }
