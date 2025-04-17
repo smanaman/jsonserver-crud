@@ -30,5 +30,12 @@
       "username": "user",
       "password": "123456"
     }
+  ],
+  "login": [
+    {
+      "id": "546f",
+      "username": "sanvatsman@gmail.com",
+      "password": "123"
+    }
   ]
 }
