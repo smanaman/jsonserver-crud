@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 function Login() {
     const nav = useNavigate()
-    const [input, setinput] = useState('')
+    const [input, setinput] = useState({
+        id:Math.floor(Math.random()*100),
+        username:'',
+        password:''
+    })
     const handlechange = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -15,26 +19,27 @@ function Login() {
         e.preventDefault()
         const res = await axios.get('http://localhost:3000/comments')
         console.log(res.data);
-  
+
         console.log(input);
         const user = res.data.find((val) =>
             val.email == input.username && val.password == input.password
         )
-        if(user){
-            await axios.post('http://localhost:3000/login',input)
+        if (user) {
+            await axios.post('http://localhost:3000/login', input)
+            
             nav('/show')
 
 
         }
-        else{
-          alert('Please enter the correct information');
+        else {
+            alert('Please enter the correct information');
 
         }
 
 
 
 
-     
+
 
     }
     return (

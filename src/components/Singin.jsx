@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './singin.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 function Singin() {
+
     const navigator=useNavigate()
+
+
       const [input, setinput] = useState({
         fullname:'',
         email:'',

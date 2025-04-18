@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Add.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -10,6 +10,7 @@ function Add() {
         description:'',
         price:''
     })
+    
 
     const handlechange = (e) => {
         const name = e.target.name

@@ -14,11 +14,30 @@ const getData = async () => {
       console.error('Error fetching data:', error);
     }
   };
+  const checkLogin = async () => {
+    try {
+      const res = await axios.get('http://localhost:3000/login');
+  console.log(res.data);
+  if (res.data.length === 0) {
+    navigator('/');
+  } else {
+    navigator('/show');
+  }
+    } catch (error) {
+      console.error('Error checking login:', error);
+      navigator('/login'); 
+    }
+  };
+  
 
   useEffect(() => {
     getData();
   }, []);
 
+useEffect(()=>{
+  checkLogin();
+
+},[navigator])
   const deleteDataInJson = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/posts/${id}`);
@@ -63,7 +82,7 @@ const getData = async () => {
     
     {/* Add more product cards here as needed */}
     {/* Add New Card */}
-    <div className="card add-card" onClick= {()=>navigator('/')}>
+    <div className="card add-card" onClick= {()=>navigator('/add')}>
       <div className="add-icon">
         <i className="fas fa-plus" />
       </div>
