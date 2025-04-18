@@ -26,9 +26,30 @@ setinput({
     description:'',
     price:''
 })
+
+
     naviget('/show')
 
     }
+
+    const checkLogin = async () => {
+        try {
+          const res = await axios.get('http://localhost:3000/login');
+      console.log(res.data);
+      if (res.data.length === 0) {
+        naviget('/login');
+      } else {
+        naviget('/add');
+      }
+        } catch (error) {
+          console.error('Error checking login:', error);
+          naviget('/login'); 
+        }
+      };
+      useEffect(()=>{
+        checkLogin();
+      
+      },[navigator])
     return (
         <div>
             <div className="body">
